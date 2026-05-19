@@ -7,10 +7,10 @@ public class Tarifário {
     private double valorMensal;
 
     public Tarifário(double v, double v1, double v2, double v3){
-        this.valorHora = valorHora;
-        this.valorDiaria = valorDiaria;
-        this.valorSemanal = valorSemanal;
-        this.valorMensal = valorMensal;
+        this.valorHora = v;
+        this.valorDiaria = v1;
+        this.valorSemanal = v2;
+        this.valorMensal = v3;
     }
 
     public double calcularValor(long totalMinutos) {
@@ -21,7 +21,7 @@ public class Tarifário {
         if (totalHoras >= 24) return valorDiaria;
         if (totalHoras * valorHora > valorDiaria) return valorDiaria;
 
-        if (totalHoras < 1) totalHoras = 1; // Cobrança mínima de 1 hora
+        if (totalHoras < 1) totalHoras = 1;
         return totalHoras * valorHora;
     }
 }
