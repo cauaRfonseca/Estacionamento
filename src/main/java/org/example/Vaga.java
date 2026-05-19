@@ -1,20 +1,28 @@
 package org.example;
 
 public class Vaga {
-    private int numero;
-    private boolean ocupada = false;
+    protected int numero;
+    protected boolean ocupada = false;
     private Veículo veiculoEstacionado;
-
-    public boolean Estacionar(int numero, Veículo veiculo) {
-
-    }
-
-    public boolean Liberar(int numero, Veículo veiculo) {
-
-    }
 
     public Vaga(int numero, Veículo veiculoEstacionado) {
         this.numero = numero;
+        this.ocupada = false;
         this.veiculoEstacionado = null;
     }
+    public boolean Estacionar(Veículo veiculo) {
+        this.veiculoEstacionado = veiculo;
+        this.ocupada = true;
+
+        return true;
+    }
+
+    public boolean Liberar() {
+        this.veiculoEstacionado = null;
+        this.ocupada = false;
+        return true;
+    }
+
+    public int GetNumero() { return numero; }
+    public Veículo GetveiculoEstacionado() { return veiculoEstacionado; }
 }

@@ -1,6 +1,6 @@
 package org.example;
 
-public class Veículo {
+public class Veículo{
     private String placa;
     private String modelo;
 
